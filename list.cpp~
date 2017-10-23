@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+
+struct Student
+{
+  char firstname[12];
+  int id;
+  float gpa;
+};
+
+int main()
+{
+  Student name;
+  cin >> name;
+  name.id = 1000;
+  name.gpa = 4.0;
+  cout << name << "ID: " << name.id << "GPA: " << name.gpa << endl;
+}
