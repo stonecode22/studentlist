@@ -1,44 +1,61 @@
 /*Student List by Stone Yang */
 #include<iostream>
 #include<string>
+#include<vector>
 using namespace std;
 
-struct student
+struct person
 {
   char fname[12];
   char lname[12];
   int id;
   float gpa;
 };
-//function calls
-void add(vector<student>v);
-void print(const vector<student>);
 
+void add();
+void print();
 int main()
 {
-  cout << "What would you like to do?" << endl;
-  cout << "Type ADD to create a new entry, PRINT to print student list, and DELETE to delect an entry." << endl;
-  add();
-  print();
-  return 0;
+  char cmd;
+  char loop;
+  do
+    {
+      cout << "What would you like to do?" << endl;
+      cout << "Type 1 to create a new entry, 2 to print student list, and 3 to delect an entry." << endl;
+      cin >> cmd;
+      switch(cmd)
+	{
+	case 1: "1";
+	  add(people);
+	  break;
+	case 2: "2";
+	  print(people);
+	  break;
+	case 3: "3";
+	  break;
+	}
+      cout << "Do you wish to make more changes? (y/n)" << endl;
+      cin >> loop;
+    }while(loop != 'y');
+    return 0;
 }
 
-void add()
+void add(vector<person>people)
 {
   cout << "Enter first name: ";
-  cin >> person.fname;
+  cin >> people.fname;
   cout << endl << "Enter last name: ";
-  cin >> person.lname;
+  cin >> people.lname;
   cout << endl << "Enter ID: ";
-  cin >> person.id;
+  cin >> people.id;
   cout << endl << "Enter GPA: ";
-  cin >> person.gpa;
-  cout << person.fname << " " << person.lname << "'s Profile Saved." << endl; 
+  cin >> people.gpa;
+  cout << people.fname << " " << people.lname << "'s Profile Saved." << endl; 
 }
 
-void print()
+void print(vector<person>people)
 {
-  cout << person.fname << " " << person.lname << endl;
-  cout << "ID: " << person.id << endl;
-  cout << "GPA: " << person.gpa << endl;
+  cout << people.fname << " " << people.lname << endl;
+  cout << "ID: " << people.id << endl;
+  cout << "GPA: " << people.gpa << endl;
 }
