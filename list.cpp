@@ -12,8 +12,10 @@ struct person
   float gpa;
 };
 
-void add();
-void print();
+person &p = p;
+person add(person&p);
+person print(person&p);
+
 int main()
 {
   char cmd;
@@ -21,41 +23,41 @@ int main()
   do
     {
       cout << "What would you like to do?" << endl;
-      cout << "Type 1 to create a new entry, 2 to print student list, and 3 to delect an entry." << endl;
+      cout << "Type 1 to create a new entry, 2 to print student list, and 3 to delete an entry." << endl;
       cin >> cmd;
-      switch(cmd)
+      if(cmd = '1')
 	{
-	case 1: "1";
-	  add(people);
-	  break;
-	case 2: "2";
-	  print(people);
-	  break;
-	case 3: "3";
-	  break;
+	  add(A);
 	}
+      else if(cmd = '2')
+	{
+	  print(A);
+	}
+      
       cout << "Do you wish to make more changes? (y/n)" << endl;
       cin >> loop;
-    }while(loop != 'y');
+    }while(loop != 'n');
     return 0;
 }
 
-void add(vector<person>people)
+person add(person&p)
 {
   cout << "Enter first name: ";
-  cin >> people.fname;
+  cin >> p.fname;
   cout << endl << "Enter last name: ";
-  cin >> people.lname;
+  cin >> p.lname;
   cout << endl << "Enter ID: ";
-  cin >> people.id;
+  cin >> p.id;
   cout << endl << "Enter GPA: ";
-  cin >> people.gpa;
-  cout << people.fname << " " << people.lname << "'s Profile Saved." << endl; 
+  cin >> p.gpa;
+  cout << p.fname << " " << p.lname << "'s Profile Saved." << endl;
+  return p;
+  
 }
 
-void print(vector<person>people)
+person print(person&p)
 {
-  cout << people.fname << " " << people.lname << endl;
-  cout << "ID: " << people.id << endl;
-  cout << "GPA: " << people.gpa << endl;
+  cout << p.fname << " " << p.lname << endl;
+  cout << "ID: " << p.id << endl;
+  cout << "GPA: " << p.gpa << endl;
 }
